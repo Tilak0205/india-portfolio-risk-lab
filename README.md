@@ -18,14 +18,19 @@ docker run --rm -p 8000:8000 -v "$(pwd)/..:/app/data" india-portfolio-risk-lab
 
 Open http://127.0.0.1:8000
 
-## Deploy to Render
+## Deploy to Vercel (recommended)
 
-Connect this repo on [Render](https://render.com) as a **Docker** web service:
+```bash
+cd projects/india-portfolio-risk-lab   # or clone this repo
+vercel deploy --prod
+```
 
-- **Root directory:** `.` (repo root)
+Uses native [FastAPI on Vercel](https://vercel.com/docs/frameworks/backend/fastapi) (`index.py` → `deploy/server.py`).
+
+## Deploy to Render / Railway (Docker)
+
 - **Dockerfile:** `Dockerfile.cloud`
-
-Or use the included `render.yaml` blueprint.
+- Or use `render.yaml` blueprint
 
 ## Jetro
 

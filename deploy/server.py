@@ -18,9 +18,16 @@ from yfinance import Ticker, download
 
 APP_DIR = Path(__file__).resolve().parent
 STATIC_DIR = APP_DIR / "static"
-DATA_DIR = Path(os.environ.get("JET_DATA_DIR", "/app/data"))
-if not DATA_DIR.exists():
-    DATA_DIR = APP_DIR.parent
+PROJECT_ROOT = APP_DIR.parent
+
+if os.environ.get("JET_DATA_DIR"):
+    DATA_DIR = Path(os.environ["JET_DATA_DIR"])
+elif os.environ.get("VERCEL") or os.environ.get("VERCEL_ENV"):
+    DATA_DIR = PROJECT_ROOT
+else:
+    DATA_DIR = Path("/app/data")
+    if not DATA_DIR.exists():
+        DATA_DIR = PROJECT_ROOT
 
 PORTFOLIO_PATH = DATA_DIR / "portfolio.json"
 CACHE_TTL_SEC = 45
