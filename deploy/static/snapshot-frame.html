@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body { margin: 0; padding: 20px; font-family: system-ui, sans-serif; background: #0d1117; color: #e6edf3; font-size: 13px; line-height: 1.45; }
+    h3 { margin: 0 0 4px; font-size: 15px; font-weight: 600; }
+    .sub { color: #8b949e; font-size: 11px; margin-bottom: 16px; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }
+    .card { flex: 1; min-width: 110px; background: #161b22; border: 1px solid #30363d; border-radius: 8px; padding: 12px; }
+    .card label { font-size: 10px; color: #8b949e; text-transform: uppercase; letter-spacing: 0.04em; display: block; }
+    .card .v { font-size: 17px; font-weight: 600; margin-top: 6px; }
+    .up { color: #3fb950; } .down { color: #f85149; }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 14px; }
+    th, td { padding: 7px 8px; border-bottom: 1px solid #30363d; text-align: left; }
+    th { color: #8b949e; font-weight: 500; }
+    .note { color: #8b949e; font-size: 11px; border-top: 1px solid #30363d; padding-top: 12px; }
+    .pill { display: inline-block; font-size: 10px; color: #c9a87c; border: 1px solid #c9a87c; border-radius: 4px; padding: 2px 8px; margin-bottom: 12px; }
+  </style>
+</head>
+<body>
+  <span class="pill">Berrywise application · Jetro</span>
+  <h3>Portfolio performance snapshot</h3>
+  <p class="sub">Sample NSE portfolio vs NIFTY 50 · Illustrative day moves (INR)</p>
+  <div class="row">
+    <div class="card"><label>Portfolio (1D)</label><div class="v up">+0.62%</div></div>
+    <div class="card"><label>NIFTY 50 (1D)</label><div class="v up">+0.43%</div></div>
+    <div class="card"><label>Active return</label><div class="v up">+0.19%</div></div>
+  </div>
+  <table>
+    <thead><tr><th>Top movers (sample)</th><th>Weight</th><th>Day</th></tr></thead>
+    <tbody>
+      <tr><td>Reliance Industries</td><td>14%</td><td class="up">+0.2%</td></tr>
+      <tr><td>HDFC Bank</td><td>13%</td><td class="down">-0.0%</td></tr>
+      <tr><td>Infosys</td><td>12%</td><td class="up">+0.8%</td></tr>
+      <tr><td>Sun Pharma</td><td>10%</td><td class="up">+2.4%</td></tr>
+    </tbody>
+  </table>
+  <p class="note">
+    This panel summarizes portfolio vs benchmark on a single day. The full application adds 6-month indexed performance, sector allocation, concentration and drawdown metrics, with live NSE prices refreshing automatically.
+  </p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "India Portfolio Risk Lab",
+  "slug": "india-portfolio-risk-lab",
+  "description": "India equity portfolio risk dashboard — Berrywise job application demo",
+  "status": "active",
+  "mode": "general",
+  "securities": [],
+  "sources": [],
+  "linkedConnections": [],
+  "linkedTemplates": [],
+  "linkedRecipes": [],
+  "createdAt": "2026-05-19T12:00:00.000Z",
+  "updatedAt": "2026-05-19T06:36:19.836Z",
+  "deployment": {
+    "slug": "wildyew-yq",
+    "url": "https://wildyew-yq.jetro.io",
+    "status": "live",
+    "target": "local",
+    "port": 63518,
+    "containerId": "24dbba61d34f64aae77987f523815320b45fb3b2489c6c137f46925e15a90e57",
+    "lastDeployed": "2026-05-19T06:36:19.829Z",
+    "version": 2
+  }
+}

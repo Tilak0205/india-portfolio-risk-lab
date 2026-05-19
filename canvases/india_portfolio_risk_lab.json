@@ -1,0 +1,62 @@
+{
+  "name": "India Portfolio Risk Lab",
+  "elements": [
+    {
+      "id": "el-title-note",
+      "type": "note",
+      "position": {
+        "x": 40,
+        "y": 40
+      },
+      "size": {
+        "width": 420,
+        "height": 200
+      },
+      "data": {
+        "title": "Berrywise Application",
+        "content": "## India Portfolio Risk Lab\n\nSample NSE portfolio (9 stocks) vs **NIFTY 50**.\n\n- **Deploy**: `projects/india-portfolio-risk-lab/deploy/`\n- **Stack**: Python FastAPI + JavaScript UI\n- **Metrics**: sector allocation, drawdown, concentration\n\nPublish via **Jetro: Deploy** → public jetro.io URL for your application email."
+      },
+      "connections": []
+    },
+    {
+      "id": "el-dashboard-frame",
+      "type": "frame",
+      "position": {
+        "x": 40,
+        "y": 280
+      },
+      "size": {
+        "width": 720,
+        "height": 480
+      },
+      "data": {
+        "title": "Live Portfolio Snapshot",
+        "html": "<!DOCTYPE html><html><head><style>body{margin:0;padding:16px;font-family:system-ui,sans-serif;background:#0d1117;color:#e6edf3;font-size:13px}h3{margin:0 0 12px;color:#8b949e}.row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}.card{flex:1;min-width:100px;background:#161b22;border:1px solid #30363d;border-radius:6px;padding:10px}.card label{font-size:10px;color:#8b949e;display:block}.card .v{font-size:16px;font-weight:600;margin-top:4px}.up{color:#3fb950}.down{color:#f85149}table{width:100%;border-collapse:collapse;font-size:12px}th,td{padding:6px 8px;border-bottom:1px solid #30363d;text-align:left}th{color:#8b949e}.cta{margin-top:14px;padding:10px;background:#161b22;border:1px solid #58a6ff;border-radius:6px;font-size:12px;color:#58a6ff}</style></head><body><h3>Live snapshot (canvas preview)</h3><div class=\"row\"><div class=\"card\"><label>Portfolio day</label><div class=\"v up\">+0.70%</div></div><div class=\"card\"><label>NIFTY 50 day</label><div class=\"v up\">+0.48%</div></div><div class=\"card\"><label>vs Benchmark</label><div class=\"v up\">+0.22%</div></div></div><table><tr><th>Stock</th><th>Wt%</th><th>Day%</th></tr><tr><td>Reliance</td><td>14%</td><td class=\"up\">+1.2%</td></tr><tr><td>HDFC Bank</td><td>13%</td><td class=\"down\">-0.4%</td></tr><tr><td>Infosys</td><td>12%</td><td class=\"up\">+0.8%</td></tr><tr><td>TCS</td><td>11%</td><td class=\"down\">-0.2%</td></tr><tr><td colspan=\"3\" style=\"color:#8b949e\">+ 5 more holdings →</td></tr></table><p class=\"cta\">Full interactive dashboard: open <strong>Web App</strong> icon above, or visit <strong>http://127.0.0.1:8000</strong> (requires Docker deploy running)</p></body></html>"
+      },
+      "connections": []
+    },
+    {
+      "id": "el-holdings-table",
+      "type": "frame",
+      "position": {
+        "x": 800,
+        "y": 40
+      },
+      "size": {
+        "width": 520,
+        "height": 720
+      },
+      "data": {
+        "title": "Holdings & Weights",
+        "html": "<!DOCTYPE html><html><head><style>body{margin:0;padding:16px;font-family:system-ui,sans-serif;background:#0d1117;color:#e6edf3;font-size:12px}h3{margin:0 0 12px;color:#8b949e}table{width:100%;border-collapse:collapse}th,td{padding:8px;border-bottom:1px solid #30363d;text-align:left}th{color:#8b949e}.tag{font-size:10px;color:#8b949e}</style></head><body><h3>India Core Portfolio</h3><table><tr><th>Name</th><th>Sector</th><th>Weight</th></tr><tr><td>Reliance Industries<br><span class='tag'>RELIANCE.NS</span></td><td>Energy</td><td>14%</td></tr><tr><td>HDFC Bank</td><td>Financials</td><td>13%</td></tr><tr><td>Infosys</td><td>IT</td><td>12%</td></tr><tr><td>TCS</td><td>IT</td><td>11%</td></tr><tr><td>Sun Pharma</td><td>Pharma</td><td>10%</td></tr><tr><td>ITC</td><td>FMCG</td><td>10%</td></tr><tr><td>Bharti Airtel</td><td>Telecom</td><td>10%</td></tr><tr><td>Kotak Bank</td><td>Financials</td><td>10%</td></tr><tr><td>L&amp;T</td><td>Industrials</td><td>10%</td></tr></table><p style='color:#8b949e;margin-top:16px'>Benchmark: NIFTY 50 (^NSEI). Full risk metrics in deployed web app.</p></body></html>"
+      },
+      "connections": []
+    }
+  ],
+  "edges": [],
+  "viewport": {
+    "x": 0,
+    "y": 0,
+    "zoom": 1
+  }
+}

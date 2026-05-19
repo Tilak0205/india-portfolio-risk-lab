@@ -1,0 +1,13 @@
+# Render Blueprint — connect this repo and set root directory to
+# projects/india-portfolio-risk-lab (or deploy from that folder).
+services:
+  - type: web
+    name: india-portfolio-risk-lab
+    runtime: docker
+    dockerfilePath: ./Dockerfile.cloud
+    dockerContext: .
+    plan: free
+    healthCheckPath: /api/summary
+    envVars:
+      - key: JET_DATA_DIR
+        value: /app/data

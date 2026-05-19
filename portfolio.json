@@ -1,0 +1,17 @@
+{
+  "name": "India Core Portfolio",
+  "benchmark": "^NSEI",
+  "benchmarkLabel": "NIFTY 50",
+  "currency": "INR",
+  "holdings": [
+    { "ticker": "RELIANCE.NS", "name": "Reliance Industries", "weight": 0.14, "sector": "Energy" },
+    { "ticker": "HDFCBANK.NS", "name": "HDFC Bank", "weight": 0.13, "sector": "Financials" },
+    { "ticker": "INFY.NS", "name": "Infosys", "weight": 0.12, "sector": "IT" },
+    { "ticker": "TCS.NS", "name": "TCS", "weight": 0.11, "sector": "IT" },
+    { "ticker": "SUNPHARMA.NS", "name": "Sun Pharma", "weight": 0.10, "sector": "Pharma" },
+    { "ticker": "ITC.NS", "name": "ITC", "weight": 0.10, "sector": "FMCG" },
+    { "ticker": "BHARTIARTL.NS", "name": "Bharti Airtel", "weight": 0.10, "sector": "Telecom" },
+    { "ticker": "KOTAKBANK.NS", "name": "Kotak Mahindra Bank", "weight": 0.10, "sector": "Financials" },
+    { "ticker": "LT.NS", "name": "Larsen & Toubro", "weight": 0.10, "sector": "Industrials" }
+  ]
+}

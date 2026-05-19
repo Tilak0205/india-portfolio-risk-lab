@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <style>
+    body { margin: 0; padding: 16px; font-family: system-ui, sans-serif; background: #0d1117; color: #e6edf3; font-size: 13px; }
+    h2 { font-size: 14px; margin: 0 0 12px; color: #8b949e; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+    .card { flex: 1; min-width: 120px; background: #161b22; border: 1px solid #30363d; border-radius: 6px; padding: 12px; }
+    .card label { font-size: 10px; color: #8b949e; display: block; }
+    .card .v { font-size: 18px; font-weight: 600; margin-top: 4px; }
+    .up { color: #3fb950; } .down { color: #f85149; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 6px 8px; border-bottom: 1px solid #30363d; text-align: left; }
+    th { color: #8b949e; font-weight: 500; }
+    .note { color: #8b949e; font-size: 11px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <h2>India Portfolio Risk Lab</h2>
+  <div id="kpis" class="row">Loading…</div>
+  <table>
+    <thead><tr><th>Stock</th><th>Wt%</th><th>Day%</th></tr></thead>
+    <tbody id="tbody"></tbody>
+  </table>
+  <p class="note">Deploy the app for full dashboard · Jetro project: india-portfolio-risk-lab</p>
+  <script>
+    (async () => {
+      try {
+        const [s, h] = await Promise.all([
+          fetch('http://127.0.0.1:8000/api/summary').then(r => r.json()),
+          fetch('http://127.0.0.1:8000/api/holdings').then(r => r.json())
+        ]);
+        const c = n => n >= 0 ? 'up' : 'down';
+        const f = n => (n >= 0 ? '+' : '') + n.toFixed(2) + '%';
+        document.getElementById('kpis').innerHTML = `
+          <div class="card"><label>Portfolio</label><div class="v ${c(s.portfolioDayChangePct)}">${f(s.portfolioDayChangePct)}</div></div>
+          <div class="card"><label>${s.benchmarkLabel}</label><div class="v ${c(s.benchmarkDayChangePct)}">${f(s.benchmarkDayChangePct)}</div></div>
+          <div class="card"><label>vs Bench</label><div class="v ${c(s.vsBenchmarkDayPct)}">${f(s.vsBenchmarkDayPct)}</div></div>`;
+        document.getElementById('tbody').innerHTML = h.holdings.map(x =>
+          `<tr><td>${x.name}</td><td>${x.weightPct}%</td><td class="${c(x.changePct)}">${f(x.changePct)}</td></tr>`
+        ).join('');
+      } catch {
+        document.getElementById('kpis').innerHTML = '<div class="card"><label>Status</label><div class="v">Run deploy to load live data</div></div>';
+        document.getElementById('tbody').innerHTML = '<tr><td colspan="3">Start Docker deploy, then refresh frame</td></tr>';
+      }
+    })();
+  </script>
+</body>
+</html>
